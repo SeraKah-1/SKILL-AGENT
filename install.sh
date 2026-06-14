@@ -92,13 +92,18 @@ fi
 echo -e "${YELLOW}→${NC} Installing agent slash commands..."
 mkdir -p "$HOME/.claude/skills" "$HOME/.claude/commands"
 mkdir -p "$HOME/.gemini/skills" "$HOME/.gemini/commands"
+mkdir -p "$HOME/.gemini/antigravity-cli/skills"
+mkdir -p "$HOME/.gemini/config/skills"
 
 cp -rf "$CONFIG_DIR/skills/"* "$HOME/.claude/skills/" 2>/dev/null || true
 cp -rf "$CONFIG_DIR/skills/"* "$HOME/.gemini/skills/" 2>/dev/null || true
+cp -rf "$CONFIG_DIR/skills/"* "$HOME/.gemini/antigravity-cli/skills/" 2>/dev/null || true
+cp -rf "$CONFIG_DIR/skills/"* "$HOME/.gemini/config/skills/" 2>/dev/null || true
 cp -rf "$CONFIG_DIR/commands/"* "$HOME/.claude/commands/" 2>/dev/null || true
 cp -rf "$CONFIG_DIR/commands/"* "$HOME/.gemini/commands/" 2>/dev/null || true
 
-echo -e "${GREEN}✓${NC} Agent slash commands installed in ~/.claude and ~/.gemini"
+echo -e "${GREEN}✓${NC} Agent slash commands installed in ~/.claude, ~/.gemini, and ~/.gemini/antigravity-cli"
+
 
 
 echo ""
