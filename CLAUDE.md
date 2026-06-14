@@ -122,11 +122,6 @@ try {
 *   **Package Manager:** Standardize on `npm`. Do not mix with yarn or pnpm.
 *   **Local Execution:** Run development servers using `npm run dev` or equivalent local commands.
 
-### 4. Tooling & MCP Integration Strategy
-*   **Figma / Penpot MCP First:** For frontend tasks, utilize Figma or Penpot MCPs to fetch precise design tokens rather than guessing aesthetics from text.
-*   **Pragmatic External Integrations:** Rely on managed toolchains (like Composio) for broad SaaS connectivity (GitHub, Vercel, Slack). Avoid custom-building MCP servers unless strictly necessary.
-*   **Ban on Brittle APIs:** Do NOT integrate undocumented, unstable, or cookie-scraping APIs (e.g., NotebookLM MCP CLI) into the core workflow. Determinism and stability are non-negotiable.
-
-### 5. Architecture: Subagents over Skill Bloat
+### 4. Architecture: Subagents over Skill Bloat
 *   **Zero Prompt Pollution:** Do NOT litter the workspace with hundreds of individual `SKILL.md` files or prompt templates.
 *   **Subagent Delegation:** For specific domain tasks (UI Design, QA, Refactoring), instantiate dedicated **Subagents** (e.g., `ui-designer`, `qa-engineer`) with pure, focused system prompts. This preserves the context window and eliminates instruction hallucination.

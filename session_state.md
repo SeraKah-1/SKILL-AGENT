@@ -82,6 +82,12 @@ This file tracks active progress, changes, and next steps in a brief, token-effi
 
 ---
 
+*   **2026-06-14T10:23:00Z | Policy Rollback: MCP Removal**
+    *   *Action:* Removed the "Tooling & MCP Integration Strategy" section from `CLAUDE.md`.
+    *   *Decision (Pragmatic):* Per user instruction, relying on MCPs (even SOTA ones) introduces too much rigidity, fragility, and overengineering. We will focus purely on code-level, direct task execution using standard PA-SDLC without mandatory MCP overhead.
+
+---
+
 ## 📋 Next Tasks
 1.  Wait for user's development prompt to build components or pages.
 2.  Begin executing tasks utilizing the SOTA PA-SDLC workflow.
