@@ -5,7 +5,7 @@
 
 set -e
 
-REPO_URL="https://github.com/SeraKah-1/antigravity-configuration.git"
+REPO_URL="https://github.com/SeraKah-1/SKILL-AGENT.git"
 CONFIG_DIR="$HOME/.antigravity-config"
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -51,11 +51,22 @@ fi
 ln -sf "$CONFIG_DIR/token-monitor-dashboard.sh" "$HOME/token-monitor-dashboard.sh"
 echo -e "${GREEN}✓${NC} Linked token-monitor-dashboard.sh → $HOME/token-monitor-dashboard.sh"
 
+# 7. Symlink executable scripts to ~/.local/bin for global CLI access
+mkdir -p "$HOME/.local/bin"
+chmod +x "$CONFIG_DIR/token-monitor.sh" "$CONFIG_DIR/token-monitor-dashboard.sh"
+ln -sf "$CONFIG_DIR/token-monitor.sh" "$HOME/.local/bin/token-monitor"
+ln -sf "$CONFIG_DIR/token-monitor-dashboard.sh" "$HOME/.local/bin/token-monitor-dashboard"
+echo -e "${GREEN}✓${NC} Linked token-monitor → $HOME/.local/bin/token-monitor"
+echo -e "${GREEN}✓${NC} Linked token-monitor-dashboard → $HOME/.local/bin/token-monitor-dashboard"
+
 echo ""
 echo -e "${GREEN}Done!${NC} Configuration installed at $CONFIG_DIR"
 echo "  CLAUDE.md & GEMINI.md symlinked to $HOME"
 echo "  token-monitor-dashboard.sh symlinked to $HOME"
+echo "  token-monitor and token-monitor-dashboard symlinked to $HOME/.local/bin"
 echo "  Edit $HOME/.env to add your credentials"
 echo ""
-echo "To run the real-time token dashboard: bash $HOME/token-monitor-dashboard.sh"
+echo "To run the token monitor: token-monitor"
+echo "To run the real-time token dashboard: token-monitor-dashboard"
 echo "To update later: git -C $CONFIG_DIR pull"
+echo ""
