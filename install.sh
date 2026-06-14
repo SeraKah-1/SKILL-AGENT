@@ -59,14 +59,44 @@ ln -sf "$CONFIG_DIR/token-monitor-dashboard.sh" "$HOME/.local/bin/token-monitor-
 echo -e "${GREEN}✓${NC} Linked token-monitor → $HOME/.local/bin/token-monitor"
 echo -e "${GREEN}✓${NC} Linked token-monitor-dashboard → $HOME/.local/bin/token-monitor-dashboard"
 
+# 8. Setup slash functions in ~/.bash_aliases
+BASH_ALIASES="$HOME/.bash_aliases"
+echo -e "${YELLOW}→${NC} Configuring slash commands (/token, /dashboard)..."
+if [ -f "$BASH_ALIASES" ] && grep -q "Antigravity Token Monitor" "$BASH_ALIASES"; then
+  echo -e "${GREEN}✓${NC} Slash commands already configured in ~/.bash_aliases"
+else
+  cat << 'EOF' >> "$BASH_ALIASES"
+
+# Custom slash functions for Antigravity Token Monitor
+/token-monitor() {
+    token-monitor "$@"
+}
+
+/token-monitor-dashboard() {
+    token-monitor-dashboard "$@"
+}
+
+# Short aliases
+/token() {
+    token-monitor "$@"
+}
+
+/dashboard() {
+    token-monitor-dashboard "$@"
+}
+EOF
+  echo -e "${GREEN}✓${NC} Added slash commands to ~/.bash_aliases"
+fi
+
 echo ""
 echo -e "${GREEN}Done!${NC} Configuration installed at $CONFIG_DIR"
 echo "  CLAUDE.md & GEMINI.md symlinked to $HOME"
 echo "  token-monitor-dashboard.sh symlinked to $HOME"
 echo "  token-monitor and token-monitor-dashboard symlinked to $HOME/.local/bin"
+echo "  Slash commands (/token, /dashboard) configured in ~/.bash_aliases"
 echo "  Edit $HOME/.env to add your credentials"
 echo ""
-echo "To run the token monitor: token-monitor"
-echo "To run the real-time token dashboard: token-monitor-dashboard"
+echo "To run the token monitor: token-monitor  (or simply: /token)"
+echo "To run the real-time token dashboard: token-monitor-dashboard  (or simply: /dashboard)"
 echo "To update later: git -C $CONFIG_DIR pull"
 echo ""
