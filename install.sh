@@ -88,6 +88,19 @@ EOF
   echo -e "${GREEN}✓${NC} Added slash commands to ~/.bash_aliases"
 fi
 
+# 9. Install Antigravity/Claude Code Agent Slash Commands (Skills & Commands)
+echo -e "${YELLOW}→${NC} Installing agent slash commands..."
+mkdir -p "$HOME/.claude/skills" "$HOME/.claude/commands"
+mkdir -p "$HOME/.gemini/skills" "$HOME/.gemini/commands"
+
+cp -rf "$CONFIG_DIR/skills/"* "$HOME/.claude/skills/" 2>/dev/null || true
+cp -rf "$CONFIG_DIR/skills/"* "$HOME/.gemini/skills/" 2>/dev/null || true
+cp -rf "$CONFIG_DIR/commands/"* "$HOME/.claude/commands/" 2>/dev/null || true
+cp -rf "$CONFIG_DIR/commands/"* "$HOME/.gemini/commands/" 2>/dev/null || true
+
+echo -e "${GREEN}✓${NC} Agent slash commands installed in ~/.claude and ~/.gemini"
+
+
 echo ""
 echo -e "${GREEN}Done!${NC} Configuration installed at $CONFIG_DIR"
 echo "  CLAUDE.md & GEMINI.md symlinked to $HOME"

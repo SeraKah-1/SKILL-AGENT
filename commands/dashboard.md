@@ -1,0 +1,1 @@
+Check if the dashboard server is already running (e.g. by checking if port 3000 is open). If it is not running, run the command `token-monitor-dashboard` in the background. Inform the user that the dashboard is ready and active at http://localhost:3000.
