@@ -25,6 +25,8 @@ Setup phase completed. Key decisions made through competitive research:
 
 ## ⏱️ Recent Action Log
 
+*   **2026-06-14T10:45:00Z | Test: Token Monitor & Installer Verification**
+    *   *Actions:* (1) Executed `token-monitor.sh` to trace estimated tokens (~276k full transcript, 467 steps) and verify model change tracking. (2) Ran `install.sh` to test single-command setup workflow (cloning, symlinking, and env stubbing). Everything succeeded.
 *   **2026-06-14T10:30:00Z | Refactor: Address Claude's Critique**
     *   *Actions:* (1) Compacted session_state.md to fix policy violation. (2) Made CLAUDE.md portable (no hardcoded paths). (3) Added situational exception to frontend-design skill. (4) Created `install.sh` for single-command setup on any device/user.
 
