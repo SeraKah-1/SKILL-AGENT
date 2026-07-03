@@ -69,6 +69,25 @@ All development tasks in this workspace must follow this 5-Fase cycle:
 
 ---
 
+## 🔬 Riset & Verifikasi Wajib (Aturan Farrel)
+
+**Instruksi ini ditambahkan oleh repo owner (SeraKah-1) dan HARUS diikuti:>
+
+### 1. Web Search untuk Verifikasi
+- Jika ada istilah, konsep teknis, objek, atau API yang dirujuk, **WAJIB lakukan web search** untuk verifikasi, riset, dan klarifikasi.
+- **Jangan pernah andalkan data internal LLM yang mungkin obsolete/deprecated.** Selalu cek sumber terkini.
+
+### 2. Riset Sebelum Fix Bug Berulang
+- Jika ada masalah atau bug yang berulang, **JANGAN langsung dikerjakan/tambal.**
+- Lakukan riset terlebih dahulu: web search masalahnya, cari root cause, dan pikirkan solusi alternatif.
+- Pendekatan: Research → Understand → Design Solution → Implement → Verify.
+
+### 3. Anti-Obsolence
+- Dependencies, API endpoints, dan library versions harus diverifikasi via web search sebelum digunakan.
+- Jangan pakai versi deprecated. Selalu cek dokumentasi resmi terkini.
+
+---
+
 ## 🛡️ Anti-Rationalization & Verification Gates
 
 **Objective:** Prevent AI shortcuts ("this is too simple for tests", "I'll refactor later", "I don't need a spec for this").
