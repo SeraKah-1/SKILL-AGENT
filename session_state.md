@@ -1,39 +1,35 @@
 # Session State & Memory Anchor
 
-This file tracks active progress, changes, and next steps in a brief, token-efficient format to prevent context drift and hallucination.
+Token-efficient progress log. Prevents context drift across sessions.
+
+**Policy:** ≤10 recent entries; archive older ones into the summary below.
 
 ---
 
-## 📍 Current Status
-*   **Active Project:** Workspace Setup Phase (COMPLETE)
-*   **Aesthetic Direction:** SOTA Pragmatic Agentic SDLC
-*   **Main Goal:** Ready for first real project.
+## Current Status
+
+- **Active project:** SKILL-AGENT lean setup
+- **Goal:** PA-SDLC + Grok hybrid workflow (no Antigravity shell/dashboard cruft)
+- **Setup:** COMPLETE (2026-07-08)
 
 ---
 
-## 📦 Archived Logs Summary (Session: 297b024a, 2026-06-14)
+## Archived Logs Summary
 
-Setup phase completed. Key decisions made through competitive research:
-
-1. **PA-SDLC 5-Fase** workflow created and integrated into `CLAUDE.md`.
-2. **3 Subagents** defined: `ui-designer`, `qa-engineer`, `code-simplifier`. Rejected skill-file bloat (validated by analyzing `antigravity-awesome-skills` — 1,550 skills, even they warn against full install).
-3. **Best practices imported** from `addyosmani/agent-skills` (Explicit Assumptions, Anti-Rationalization, Verification Gates) and `obra/superpowers` (Atomic Planning). Rejected their overengineered structures.
-4. **MCP servers researched** (GitHub, Vercel, Figma, Firebase, Penpot, Composio, NotebookLM). All **deferred** — too rigid/fragile for our pragmatic workflow. Will revisit only when a real project demands specific integration.
-5. **Credentials** stored in `.env` (git-ignored). Repo pushed to `SeraKah-1/antigravity-configuration`.
+**Source audit (2026-07-08):** Cloned SeraKah-1/SKILL-AGENT. Kept PA-SDLC contract, subagent role prompts, session anchoring. Discarded install.sh, token-monitor*.sh, Express dashboard, thin /token /dashboard skills-commands, brain metadata, Antigravity-only paths. Distilled AGENT.md → AGENTS.md for Grok. Superpowers remains the process engine; AGENTS.md is the project contract.
 
 ---
 
-## ⏱️ Recent Action Log
+## Recent Action Log
 
-*   **2026-06-14T10:55:00Z | Feat: Real-Time Token Monitor Web Dashboard**
-    *   *Actions:* (1) Built a lightweight Node.js/Express backend that watches CLI session transcripts. (2) Designed an industrial/cyberpunk dark-theme frontend using Chart.js to graph token growth dynamically. (3) Wrote `token-monitor-dashboard.sh` launcher and integrated dashboard symlinking/deployment into `install.sh`. (4) Validated API endpoints and pushed code to GitHub.
-*   **2026-06-14T10:45:00Z | Test: Token Monitor & Installer Verification**
-    *   *Actions:* (1) Executed `token-monitor.sh` to trace estimated tokens (~276k full transcript, 467 steps) and verify model change tracking. (2) Ran `install.sh` to test single-command setup workflow (cloning, symlinking, and env stubbing). Everything succeeded.
-*   **2026-06-14T10:30:00Z | Refactor: Address Claude's Critique**
-    *   *Actions:* (1) Compacted session_state.md to fix policy violation. (2) Made CLAUDE.md portable (no hardcoded paths). (3) Added situational exception to frontend-design skill. (4) Created `install.sh` for single-command setup on any device/user.
+- **2026-07-08 | Setup: hybrid lean worktree**
+  - Wrote `AGENTS.md`, reset `session_state.md`, added `.grok/agents/{ui-designer,qa-engineer,code-simplifier}.md`.
+  - Removed junk tooling and wrote lean `README.md`.
+  - Next: use this project as template; copy `AGENTS.md` + `session_state.md` + `.grok/agents/` into real product repos when starting work.
 
 ---
 
-## 📋 Next Tasks
-1.  Wait for user's development prompt to build a real project.
-2.  Execute PA-SDLC workflow on that project to prove effectiveness.
+## Next Tasks
+
+1. Start a real product task in a project that includes this contract (copy or symlink pattern).
+2. Run PA-SDLC once end-to-end to validate friction.

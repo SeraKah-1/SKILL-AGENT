@@ -1,6 +1,0 @@
-{
-  "summary": "Updated agent research to introduce the qa-engineer subagent. This fills the testing and verification gap in our workspace workflow, establishing a complete software development lifecycle.",
-  "updatedAt": "2026-06-14T09:35:02.774938087Z",
-  "requestFeedback": true,
-  "userFacing": true
-}
